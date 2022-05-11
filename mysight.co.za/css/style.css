@@ -160,11 +160,11 @@ h1,h2,h3,h4,h5{
     padding-bottom: 25px;   
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
 
     #about-us-div{
         background-size: 100%;
-        background-repeat: no-repeat;
+       
         display: flex;
         justify-content: center center;
         
