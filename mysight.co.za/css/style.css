@@ -252,3 +252,37 @@ h1,h2,h3,h4,h5{
 #shopnow{
   width: 90%;
 }
+
+/*back to top scrol*/
+
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 15px;
+  }
+}
+
+.back-to-top:focus {
+  background: #000000;
+  color: #fff;
+  outline: none;
+}
+
+.back-to-top:hover {
+  background: #000000;
+  color: #fff;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #000000;
+  line-height: 1;
+  color: #fff;
+  padding: 7px 12px 13px 12px;
+  font-size: 16px;
+  border-radius: 2px;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+}
