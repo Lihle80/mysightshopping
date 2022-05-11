@@ -60,7 +60,10 @@ h1,h2,h3,h4,h5{
         background-repeat: no-repeat;
     }
   
-    
+    #aboutus-blur{
+      backdrop-filter: blur(20px);
+    }
+  
   }
   
   @media screen and (max-width: 600px) {
