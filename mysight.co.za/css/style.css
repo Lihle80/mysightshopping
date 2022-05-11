@@ -48,7 +48,7 @@ h1,h2,h3,h4,h5{
     float: right;
   }
   
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -63,7 +63,7 @@ h1,h2,h3,h4,h5{
     
   }
   
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
