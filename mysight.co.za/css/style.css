@@ -184,6 +184,10 @@ h1,h2,h3,h4,h5{
       #contact-part{
         padding: 10px;
       }
+
+      #shopnow{
+        width: 97%;
+      }
   }
 
 /*buttons*/
