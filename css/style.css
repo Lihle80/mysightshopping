@@ -286,3 +286,8 @@ h1,h2,h3,h4,h5{
   bottom: 15px;
   transition: background 0.5s;
 }
+
+#imgshop:hover{
+  width: 35%;
+  transition: 0.5s;
+}
