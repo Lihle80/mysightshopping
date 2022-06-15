@@ -271,6 +271,10 @@ h1,h2,h3,h4,h5{
   background: #000000;
   color: #fff;
 }
+#foot-links{
+  display: flex;
+  justify-content: left;
+}
 
 /* Back to top button */
 .back-to-top {

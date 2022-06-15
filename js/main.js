@@ -35,5 +35,26 @@ function scroll(){
   });
 }
    
+//form javascript
+function SubForm (){
+  var timeval = document.getElementById("timestamp");
 
+  //get time stamp and set it
+  const date = new Date();
+  const nDate = date.toDateString();
+  const time = date.toLocaleTimeString();
+  timeval.value = nDate + " " + time;
 
+  $.ajax({
+    url:"https://api.apispreadsheets.com/data/oHTzQTV5VcW1OuUc/",
+    type:"post",
+    data:$("#myForm").serializeArray(),
+    success: function(){
+      alert("Form Data Submitted :)")
+      document.getElementById("myForm").reset();
+    },
+    error: function(){
+      alert("There was an error :(")
+    }
+  });
+}
