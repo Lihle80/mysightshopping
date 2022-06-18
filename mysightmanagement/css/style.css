@@ -1,4 +1,4 @@
-body h1{
+body h1,h3,p{
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -15,4 +15,18 @@ body h1{
     z-index: 2;
     cursor: pointer;
 
+  }
+
+  .green{
+    color: rgb(25, 139, 25);
+    font-size: x-large;
+  }
+
+  .moneygreen{
+    color: rgb(192, 125, 0);
+    font-size: x-large; 
+  }
+
+  .card:hover{
+    box-shadow:0px 0px 16px 6px #302f2f;
   }

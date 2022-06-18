@@ -1,3 +1,8 @@
+//date page:
+const d = new Date();
+var dateval = document.getElementById("dateP");
+
+dateval.innerHTML = d.toUTCString();
 //==============Fetch Data completed orders Sheet=================================
 //google spreedsheet data
 //1J0MgovNFe7J079vpkg929B4CTC1zDnyTZozeZ-v-j1U
@@ -31,7 +36,7 @@ function init() {
           let structuredArr = [ ];
 
          
-          //populate table headers
+          //get headers
           for (let j = 0; j < arrtestHead.length; j++) {
   
             var orderNum = arrtestHead[0].label;
@@ -42,20 +47,13 @@ function init() {
             var customerPhone = arrtestHead[5].label;
             var customerEmail = arrtestHead[6].label;
             var CustomerName = arrtestHead[7].label;
-
-            tableBH.innerHTML =`
-            <th>${orderNum}</th>
-            <th>${orderDate}</th>
-            <th>${orderItem}</th>
-            <th>${orderTotal}</th>
-            <th>${orderAddress}</th>
-            <th>${customerPhone}</th>
-            <th>${customerEmail}</th>
-            <th>${CustomerName}</th>
-            `;
           }
 
-          //populate table rows
+          var completeOrders = document.getElementById("completeOrders");
+          var NumberComplete = document.getElementById("numberComplete");
+          let tRev = 0;
+         
+          //get table rows and populate Cards
           for (let i = 0; i < arrTest.length; i++) {
            
             var d2orderNum = arrTest[i].c[0].v;
@@ -65,20 +63,31 @@ function init() {
             var d2orderAdress = arrTest[i].c[4].v;
             var d2CusPhone = arrTest[i].c[5].v;
             var d2CusEmail = arrTest[i].c[6].v;
-            var d2CusName = arrTest[i].c[7  ].v;
+            var d2CusName = arrTest[i].c[7].v;
 
-            tableB2.innerHTML +=`<tr>
-            <td>${d2orderNum}</td>
-            <td>${d2orderDate}</td>
-            <td>${d2orderItem}</td>
-            <td>${d2orderTotal}</td>
-            <td>${d2orderAdress}</td>
-            <td>${d2CusPhone}</td>
-            <td>${d2CusEmail}</td>
-            <td>${d2CusName}</td>
-            </tr>`;
-
+            completeOrders.innerHTML += `
+            <div class="col-md">
+              <div class="card" style="width: 35rem;">
+                <div class="card-body">
+                  <h4 class="card-title">${orderNum}: ${d2orderNum}</h4>
+                  <h5 class="card-subtitle mb-2 text-muted"><b>${CustomerName}: ${d2CusName}</b></h5>
+                  <h5 class="card-subtitle mb-2 text-muted">${d2orderDate}</h5>
+                  <hr></hr>
+                  <h5 class="card-text">${customerPhone}: <b>${d2CusPhone}</b></h5>
+                  <h5 class="card-text">${customerEmail}: <b>${d2CusEmail}</b></h5>
+                  <h5 class="card-text">${orderAddress}: <b>${d2orderAdress}</b></h5>
+                  <hr></hr>
+                  <h5 class="card-text">${orderItem}: <b>${d2orderItem}</b></h5>
+                  <hr></hr>
+                  <h4 class="card-text">${orderTotal}: <b>R ${d2orderTotal}</b></h4>
+                  <span class="moneygreen"><i class="fa fa-sack-dollar"></i></span>&nbsp;&nbsp;&nbsp;
+                  <span class="green"><i class="fa fa-circle-check"></i> Complete</span>
+                </div>
+              </div>
+            </div>`;
            
+           
+            
             //console.log(arrTest[i].c);
             
             //contruction a proper structured array of the data
@@ -92,9 +101,12 @@ function init() {
                  "CusEmail":d2CusEmail,
                  "CusName":d2CusName,
             });
-  
 
           }
+
+          //var tRev = d2orderTotal;
+          NumberComplete.style.fontSize = "18px";
+          NumberComplete.innerHTML = `Completed orders: <b>${arrTest.length}</b> <br> Total Revenue: `;
 
           var num = structuredArr.length;
           //log array to console to check proper structure
