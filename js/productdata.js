@@ -4,9 +4,9 @@ var prodCardinner = document.getElementById("prdCards");
 //https://docs.google.com/spreadsheets/d/1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs/edit?usp=sharing
 const sheetId2 = '1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs';
 const base2 = `https://docs.google.com/spreadsheets/d/${sheetId2}/gviz/tq?`;
-const sheetName2 = 'Products - info';
-const query2 = encodeURIComponent('Select *')
-const url= `${base2}&sheet=${sheetName2}&tq=${query2}`
+const sheetName2 = 'mysight-products';
+const query2 = encodeURIComponent('Select *');
+const url= `${base2}&sheet=${sheetName2}&tq=${query2}`;
 
 //DOM function lisatener
 const client = []

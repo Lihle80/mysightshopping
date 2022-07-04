@@ -12,15 +12,41 @@ function myFunction() {
 //SCROLL TO FUNCTION
 //Get the button
 var mybutton = document.getElementById("myBtn");
-
+var mycarlink = document.getElementById("cartdiv");
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
+	
+	try{
+	//display cart at different position
+	mycarlink.animate([
+	// keyframes
+	  {top: `10px`}
+				 ],{
+	  // timing options
+	  duration: 2000,
+	});
+	}
+	catch{}
+	
   } else {
     mybutton.style.display = "none";
+	
+	try{
+	//display cart at different position
+	mycarlink.animate([
+	// keyframes
+	  {top: `75px`}
+				 ],{
+	  // timing options
+	  duration: 2000,
+	});
+	}
+	catch{}
+	
   }
 }
 
@@ -47,7 +73,20 @@ function SubForm (){
   //show loaders
   loadcicle.style.display = "block";
 
-  $.ajax({
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbzyAdWjoYajoqHFzwezNfqLAKbFA_DNxfkKDFZl8cDKz2iN8aDk21XHg_ViOlZ6EyUG/exec'
+	const form = document.forms['sub-com']
+
+	form.addEventListener('submit', e => {
+	  e.preventDefault()
+	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => console.log('Success!', response))
+		.catch(error => console.error('Error!', error.message))
+
+		document.getElementById("orderForm").reset();   
+		cicr(); 
+	});
+	
+  /*$.ajax({
     url:"https://api.apispreadsheets.com/data/oHTzQTV5VcW1OuUc/",
     type:"post",
     data:$("#myForm").serializeArray(),
@@ -69,7 +108,7 @@ function SubForm (){
 		  $(messagetag).fadeOut();
 	  }
     }
-  });
+  });*/
 }
 
 var linksToDisp = document.getElementById("hiid");

@@ -74,7 +74,7 @@ h1,h2,h3,h4,h5{
       float: right;
       display: block;
     }
-
+	
     #about-us-div{
         background-size: auto;
        
@@ -142,32 +142,59 @@ h1,h2,h3,h4,h5{
       color: white;
       height: 45px;
       width: 45px;
-      position: absolute;
       right: 15px;
       top: 50px;
       border-style: solid;
       border-color: rgb(255, 255, 255);
-      border-radius: 20px;
+      border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: larger;
   }
 
   #cartlink:hover{
-    background-color: rgb(49, 49, 49);
-    color: white;
-    height: 50px;
-    width: 50px;
-    border-radius: 22px;
-    display: flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: x-large;
-    transition: 0.3s;
+    background-color: rgb(55, 55, 65);
+    transition: ease-in 0.2s;
 }
 
+#cartdiv{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	position: fixed;
+	z-index: 1;
+}
+
+#cartNum{
+	height: 30px;
+	background-color: white;
+	padding: 5px;
+	border-radius: 200px;
+	border-color: black;
+	border-style: solid;
+	border-width: 0.1px;
+	position: absolute;
+	top: 32px;
+	right: -5px;
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: canter;
+	align-content: center;
+}
+
+ @media screen and (max-width: 600px) {
+	 
+	#cartdiv{
+		position: absolute;
+		top: 75px;
+		right: 15px;
+		position: fixed;
+		z-index: 1;
+	}
+
+ }
+ 
 
   #icone{
     font-size: x-large;
@@ -228,6 +255,14 @@ h1,h2,h3,h4,h5{
         justify-content: center center;
         
     }
+	
+	#cartdiv{
+		position: absolute;
+		top: 75px;
+		right: 10px;
+		position: fixed;
+		z-index: 1;
+	}
   
     #aboutus-blur{
         width: 100%;
@@ -236,11 +271,11 @@ h1,h2,h3,h4,h5{
         font-size: medium;
         font-weight: bold;
         font-family: 'Times New Roman';
-      }
-      #contact-part{
-        padding: 10px;
-      }
-
+	}
+	#contact-part{
+		padding: 10px;
+	}
+	  
   }
 
 /*buttons*/

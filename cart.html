@@ -29,44 +29,51 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
+  
+  
+  <div id="cartdiv">
+	<a href="cart.html"><button id="cartlink"><i class="fa fa-shopping-cart"></i></button></a>
+	<div id="cartNum"><p class="text-center">0</p></div>
+  </div>
  
+<div class="mycontainer-lg">
+	  <!--Main Html Page-->
+	<center>
+		<img src="img/My sight (1).png" alt="logo" width="20%">
+	</center>
 
-  <!--Main Html Page-->
-<center>
-    <img src="img/My sight (1).png" alt="logo" width="30%">
-</center>
+	<!--body of html -->
+	<center>
+	<h1>Your Cart <i class="fa fa-shopping-cart" id="cart-color"></i></h1>
+	<h5>Head to Checkout Now!</h5>
 
-<!--body of html -->
-<center>
-<h1>Your Cart <i class="fa fa-shopping-cart" id="cart-color"></i></h1>
-<h5>Head to Checkout Now!</h5>
+	<div class="mycontainer-lg">
+		<table class="table" id="myTable">
+			<thead class="thead-dark">
+				<tr>
+				<th>Product Description</th>
+				<th>unit Price</th>
+				<th>Quantity</th>
+				<th>Total Cost</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				
+			</tbody>
+			<tfoot id="tfoot">
+				
+			</tfoot>
+		</table>
 
-<div class="container">
-    <table class="table" id="myTable">
-        <thead class="thead-dark">
-            <tr>
-            <th>Product Description</th>
-            <th>unit Price</th>
-            <th>Quantity</th>
-            <th>Total Cost</th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-            
-        </tbody>
-        <tfoot id="tfoot">
-            
-        </tfoot>
-    </table>
+		<h4 id="numberRows"></h4>
+		
+	</div>
+	</center>
 
-    <h4 id="numberRows"></h4>
-    
+	<!--back to top chevron-->
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
+
 </div>
-</center>
-
-<!--back to top chevron-->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
-
 
 <!-----------------------------------------------footer section-------------------------------------------------------->
 <!-- Footer -->
@@ -146,8 +153,6 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
-
-</div>
 
 <!--Java Scripts-->
 <script src="js/main.js"></script>
