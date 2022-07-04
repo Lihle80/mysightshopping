@@ -33,25 +33,41 @@ function topFunction() {
 
    
 //form javascript
-function SubForm (){
+function SubForm (){ 
   var timeval = document.getElementById("timestamp");
-
+  var messagetag = document.getElementById("sub-message");
+  var loadcicle = document.getElementById("loadersp");
+	
   //get time stamp and set it
   const date = new Date();
   const nDate = date.toDateString();
   const time = date.toLocaleTimeString();
   timeval.value = nDate + " " + time;
+  
+  //show loaders
+  loadcicle.style.display = "block";
 
   $.ajax({
     url:"https://api.apispreadsheets.com/data/oHTzQTV5VcW1OuUc/",
     type:"post",
     data:$("#myForm").serializeArray(),
     success: function(){
-      alert("Form Data Submitted :)")
+      messagetag.innerHTML = "Your message has been sent. Our team will get back to you as soon as possible.";
+	  
+	  const msg = setTimeout(msgal, 2000)
+	  function msgal(){
+		  $(messagetag).fadeOut();
+	  }
+	  
       document.getElementById("myForm").reset();
     },
     error: function(){
-      alert("There was an error :(")
+      messagetag.innerHTML = "There was an error, your form has not been submitted";
+	  
+	  const msg = setTimeout(msgal, 2000)
+	  function msgal(){
+		  $(messagetag).fadeOut();
+	  }
     }
   });
 }

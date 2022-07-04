@@ -18,99 +18,80 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     
 </head>
-<body onload="">
+<body>
 <!--Navigation-->
 <div class="topnav" id="myTopnav">
-    <a href="index.html">Home <i class="fa fa-home"></i></a>
-    <a href="index.html">About Us <i class="fa fa-info-circle"></i></a>
-    <a href="shop.html" class="active">Shop <i class="fa fa-shopping-bag"></i></a>
-    <a href="index.html">Contact US <i class="fa fa-phone"></i></a>
+    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+    <a href="index.html"><i class="fa fa-info-circle"></i> About Us</a>
+    <a href="shop.html" class="active"><i class="fa fa-shopping-bag"></i> Shop</a>
+    <a href="index.html"><i class="fa fa-phone"></i> Contact US</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 
-  <!--Main Html Page-->
-    <center>
-        <img src="img/My sight (1).png" alt="logo" width="30%">
+<div class="myconatainer-lg">
+	<!--Main Html Page-->
+	<center>
+		<img src="img/My sight (1).png" alt="logo" width="30%">
+	
+		<h2>Start Shopping <i class="fa fa-shopping-bag" id="carts"></i></h2>
+		<br>
+	</center>
 
-        <h2>Start Shopping <i class="fa fa-shopping-bag" id="carts"></i></h2>
-        <br>
-    </center>
+	  <!--Product cards-->
+	<div class="container" id="prdCards">
+	  
+	</div>
 
-  <!--Product cards-->
-    <div class="container">
-      <div class="row">
-          <div class="col-sm-3" id="pcards">
-              <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-467248287" 
-              itemscope itemtype="http://schema.org/Product" data-single-product-id="467248287"><div itemprop="image"></div><div class="ecsp-title" itemprop="name"
-              content="Mysight T-shirth"></div><div itemtype="http://schema.org/Offer" itemscope itemprop="offers"><div class="ecsp-productBrowser-price ecsp-price"
-              itemprop="price" content="200"><div itemprop="priceCurrency" content="ZAR"></div></div></div><div customprop="addtobag">
-              </div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?36761557&data_platform=singleproduct_v2" 
-              charset="utf-8"></script><script type="text/javascript">xProduct()</script>
-          </div>
-          <div class="col-sm-3" id="pcards">
-              <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-467239032" 
-              itemscope itemtype="http://schema.org/Product" data-single-product-id="467239032"><div itemprop="image"></div><div class="ecsp-title" itemprop="name"
-              content="MySight Hoodie"></div><div itemtype="http://schema.org/Offer" itemscope itemprop="offers"><div class="ecsp-productBrowser-price ecsp-price" 
-              itemprop="price" content="450"><div itemprop="priceCurrency" content="ZAR"></div></div></div><div customprop="addtobag">
-              </div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?36761557&data_platform=singleproduct_v2"
-              charset="utf-8"></script><script type="text/javascript">xProduct()</script>
-          </div>
-      </div>   
-    </div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-title"></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p id="title"></p>
-                <p id="direc"></p>
-                <p id="releaseY" ></p>
-                <p id="runT"></p>
-            </div>
-            <div class="modal-footer">
-                <h4 id="title">R 200.00</h4>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="modal-title"></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p id="title"></p>
+					<p id="direc"></p>
+					<p id="releaseY" ></p>
+					<p id="runT"></p>
+				</div>
+				<div class="modal-footer">
+					<h4 id="title">R 200.00</h4>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
-<br>
+<br>	  
 <!--back to top chevron-->
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
 
 
 <!-----------------------------------------------footer section-------------------------------------------------------->
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com/mysightshopping" role="button"><i class="fa fa-facebook" id="icone"></i> mysightshopping</a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/mysightshopping" role="button"><i class="fa fa-instagram" id="icone"></i> mysightshopping</a>
-      
-    </section>
-    <!-- Section: Social media -->
-
-  <center>
-   <!-- Section links  -->
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com/mysightshopping" role="button"><i class="fa fa-facebook" id="icone"></i> mysightshopping</a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/mysightshopping" role="button"><i class="fa fa-instagram" id="icone"></i> mysightshopping</a>
+        
+      </section>
+      <!-- Section: Social media -->
+  
+    <center>
+      <!-- Section links  -->
       <div class="container-lg">
         <div class="row" id="foot-links">
           <div class="col-sm-4">
@@ -139,41 +120,44 @@
           </div>
         </div>
       </div>
-  </center>
+    </center>
 <br>
 
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <center>
-        <h4>
-          Thank you for the great support.
-        </h4>
-      </center>
-    </section>
-    
-    <!-- Section: Text -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.808);">
-    Est.2021  &nbsp; © 2022 Copyright.
-    <a class="text-white" href="#">  &nbsp; MySight Shopping</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
-
-<!--back to top chevron-->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
-
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <center>
+          <h4>
+            Thank you for the great support.
+          </h4><br>
+		  <p>Developer <a type="button" onclick="displaylinks()" class="lowerlink"><b>Mila</b><em>(Convee Developer)</em></a>
+		  <br>
+		  <div id="hiid">
+		  <a href="https://instagram.com/convee.za" class="lowerlink"><i class="fa fa-instagram"></i> Convee.co</a>
+		  &nbsp;&nbsp;
+		  <a href="https://convee.co.za" class="lowerlink"><i class="fa fa-globe"></i> convee.co.za</a>
+		  </div>
+		  </p>
+        </center>
+      </section>
+      
+      <!-- Section: Text -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.808);">
+      Est.2021  &nbsp; © 2022 Copyright.
+      <a class="text-white" href="#">  &nbsp; MySight Shopping</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 
 <!--Java Scripts-->
 <script src="js/main.js"></script>
 <script src="js/productdata.js"></script>
-<script src="js/bootstrap.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
 
 </body>
 </html>

@@ -1,67 +1,64 @@
-/* 
-let products = [
-    {
-        Name: "hoodie",  
-        Price: 200,
-        Sku: "", 
-        color: "",
-        imgs: "",
-        size: "",
-        StockQuantity: 0
-    
-    },
-    {
-        Name: "Golfer",  
-        Price: 200,
-        Sku: "", 
-        color: "",
-        imgs: "",
-        size: "",
-        StockQuantity: 0
-    
-    },
-    {
-        Name: "t-shirt",  
-        Price: 200,
-        Sku: "", 
-        color: "",
-        imgs: "",
-        size: "",
-        StockQuantity: 0
-    
-    }
-]
+//Global Variables
+var prodCardinner = document.getElementById("prdCards");
 
-function onShopPageLoad()
-{
-    //log products array to console
-    console.log(products);
+//https://docs.google.com/spreadsheets/d/1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs/edit?usp=sharing
+const sheetId2 = '1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs';
+const base2 = `https://docs.google.com/spreadsheets/d/${sheetId2}/gviz/tq?`;
+const sheetName2 = 'Products - info';
+const query2 = encodeURIComponent('Select *')
+const url= `${base2}&sheet=${sheetName2}&tq=${query2}`
 
-    
-  var table = document.getElementById("tbody");
-  for( let i = 0; i<products.length; i++)
-  {
-    var prodName = products[i].Name;
-    var prodPrice = products[i].Price;
-
-    //add  cards
-    var rowcards = document.getElementById("pdCards");
-
-     rowcards.innerHTML += `<div class="col-sm-3">
-        <div class="card">
-        <div class="card-header" id="productName">${prodName}</div>
-        <div class="card-body" id="b1"></div> 
-        <div class="card-footer" id="f1"></div>
-        </div>
-        </div>`
-    
+//DOM function lisatener
+const client = []
+document.addEventListener('DOMContentLoaded', init)
  
-      
-    document.getElementById("productName").innerHTML = prodName;
-  
-  }
+/*INT FUNCTION TO PROCCESS ***This function fetches data from the google sheet detailed above
+after the data is fethced in the function, it is then changed from an unstructures array 
+to a structured array to use in other functoons****/
+function init(){
+    fetch(url)
+    .then(res => res.text())
+    .then(rep => {
+        //Remove additional text and extract only JSON:
+        const jsonData2 = JSON.parse(rep.substring(47).slice(0, -2));
+        //rows of the data retrieved
+        const prodArr = jsonData2.table.rows;
+        //=============LOG TO CONSOLE========================//
+        //console.log(jsonData2);
+        console.log(prodArr);
 
+        let nw = [ ];
+		
+        for (let i = 1; i < prodArr.length; i++) {
       
+          var Prd_Code = prodArr[i].c[0].v;
+          var Product =	prodArr[i].c[1].v;
+          var SellingP =	prodArr[i].c[2].v;
+          var WaterpreneurP =	prodArr[i].c[3].v;
+          var imgUrl = prodArr[i].c[4].v;
 
+
+          //contruction a proper structured array of the data
+          nw.push({
+                "Prd_Code":	Prd_Code,
+                "Product": Product,	
+                "Selling_Price": SellingP,	
+                "Waterpreneur_Price": WaterpreneurP,	
+                "wholesale_Price": wholesaleP,
+                "Pack_Size": packSize,
+                "Pallet_Size": PalletSize,
+                "img_url": imgUrl
+            });
+
+            
+            try{
+       
+
+            }
+            catch{
+              
+            }
+			
+        }
+    })        
 }
-*/
