@@ -29,7 +29,7 @@ function init(){
         const prodArr = jsonData2.table.rows;
         //=============LOG TO CONSOLE========================//
         //console.log(jsonData2);
-        console.log(prodArr);
+        //console.log(prodArr);
 
         let nw = [ ];
 		
@@ -50,7 +50,7 @@ function init(){
                 "Price": prdPrice,	
                 "img_url": imgUrl
             });
-
+	  console.log(nw);
             
             try{
 				prodCardinner.innerHTML += `
@@ -59,7 +59,7 @@ function init(){
 						<div class="card-header">
 						<h4>${productName}</h4>
 						</div>
-						<img src="${imgUrl}" class="card-img-top" alt="${productName} img">
+						<img src='${imgUrl}' class="card-img-top" alt="${productName} img">
 						<div class="card-body">
 							<h4 class="card-title">R ${prdPrice}.00</h4>
 							<p class="card-text"></p>
