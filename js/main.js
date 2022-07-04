@@ -9,31 +9,28 @@ function myFunction() {
 
   }
 
-function scroll(){
-  $(window).scroll(function () {
-    var height = $(window).height();
-    var scroll = $(window).scrollTop();
-    if (scroll) {
-      $(".header-hide").addClass("scroll-header");
-    } else {
-      $(".header-hide").removeClass("scroll-header");
-    }
+//SCROLL TO FUNCTION
+//Get the button
+var mybutton = document.getElementById("myBtn");
 
-  });
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
- // Back to top button
- $(window).scroll(function() {
-  if ($(this).scrollTop() > 100) {
-    $('.back-to-top').fadeIn('slow');
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
   } else {
-    $('.back-to-top').fadeOut('slow');
+    mybutton.style.display = "none";
   }
-  });
-  $('.back-to-top').click(function(){
-    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
-    return false;
-  });
 }
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.body.style = "transition: ease-in 0.3s; behavior: smooth;";
+  document.documentElement.scrollTop = 0;
+}
+
    
 //form javascript
 function SubForm (){
@@ -57,4 +54,18 @@ function SubForm (){
       alert("There was an error :(")
     }
   });
+}
+
+var linksToDisp = document.getElementById("hiid");
+//display external developer links
+function displaylinks(){
+	
+	linksToDisp.style.display = "block";
+	linksToDisp.style.transition = "ease-in 0.3s";
+	
+	const t = setTimeout(stopShow, 5000);
+	function stopShow(){
+		linksToDisp.style.display = "none";
+	}
+
 }
