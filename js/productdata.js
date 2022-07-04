@@ -55,7 +55,7 @@ function init(){
             try{
 				prodCardinner.innerHTML += `
 				<div class="col-sm-4">
-					<div class="card chover" style="width: 40rem;">
+					<div class="card chover" style="width: 35rem;">
 						<div class="card-header">
 						<h4>${productName}</h4>
 						</div>
