@@ -1,6 +1,10 @@
 //Global Variables
 var prodCardinner = document.getElementById("prdCards");
+var modinnerBody = document.getElementById("modinnerBody");
+var modinnerTitle = document.getElementById("modinnerTitle");
+var modinnerFoot = document.getElementsById("modinnerFoot");
 
+//work/functions
 //https://docs.google.com/spreadsheets/d/1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs/edit?usp=sharing
 const sheetId2 = '1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs';
 const base2 = `https://docs.google.com/spreadsheets/d/${sheetId2}/gviz/tq?`;
@@ -31,28 +35,38 @@ function init(){
 		
         for (let i = 1; i < prodArr.length; i++) {
       
-          var Prd_Code = prodArr[i].c[0].v;
-          var Product =	prodArr[i].c[1].v;
-          var SellingP =	prodArr[i].c[2].v;
-          var WaterpreneurP =	prodArr[i].c[3].v;
+          var prd_Code = prodArr[i].c[0].v;
+          var productName =	prodArr[i].c[1].v;
+          var prdDescription =	prodArr[i].c[2].v;
+          var prdPrice =	prodArr[i].c[3].v;
           var imgUrl = prodArr[i].c[4].v;
 
 
           //contruction a proper structured array of the data
           nw.push({
-                "Prd_Code":	Prd_Code,
-                "Product": Product,	
-                "Selling_Price": SellingP,	
-                "Waterpreneur_Price": WaterpreneurP,	
-                "wholesale_Price": wholesaleP,
-                "Pack_Size": packSize,
-                "Pallet_Size": PalletSize,
+                "Prd_Code":	prd_Code,
+                "Name": productName,	
+                "Description": prdDescription,	
+                "Price": prdPrice,	
                 "img_url": imgUrl
             });
 
             
             try{
-       
+				prodCardinner.innerHTML = `
+				<div class="col-sm-4">
+					<div class="card chover" style="width: 30rem;">
+						<div class="card-header">
+						<h4>${productName}</h4>
+						</div>
+						<img src='${imgUrl}' class="card-img-top" alt="productName">
+						<div class="card-body">
+							<h4 class="card-title">${prdPrice}</h4>
+							<p class="card-text"></p>
+							<button type="button" id="prd_Code" class="btn btn-warning" data-toggle="modal" data-target="#productCenter">View Product</button>
+						</div>
+					</div>
+				</div>`;
 
             }
             catch{

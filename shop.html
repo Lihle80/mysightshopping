@@ -45,39 +45,37 @@
 	</center>
 
 	  <!--Product cards-->
-	<div class="container" id="prdCards">
-	  
+	<div class="container-lg" >
+	  <div class="row" id="prdCards">
+		
+	  </div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="modal-title"></h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p id="title"></p>
-					<p id="direc"></p>
-					<p id="releaseY" ></p>
-					<p id="runT"></p>
-				</div>
-				<div class="modal-footer">
-					<h4 id="title">R 200.00</h4>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <br>	  
 <!--back to top chevron-->
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
 
+
+<!-- prd Modal -->
+<div class="modal fade" id="productCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modinnerTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modinnerBody">
+        
+      </div>
+      <div class="modal-footer" id="modinnerFoot">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-----------------------------------------------footer section-------------------------------------------------------->
 <!-- Footer -->
@@ -162,7 +160,7 @@
 <script src="js/main.js"></script>
 <script src="js/productdata.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

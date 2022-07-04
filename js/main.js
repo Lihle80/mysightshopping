@@ -57,7 +57,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-   
 //form javascript
 function SubForm (){ 
   var timeval = document.getElementById("timestamp");
@@ -73,21 +72,8 @@ function SubForm (){
   //show loaders
   loadcicle.style.display = "block";
 
-	const scriptURL = 'https://script.google.com/macros/s/AKfycbzyAdWjoYajoqHFzwezNfqLAKbFA_DNxfkKDFZl8cDKz2iN8aDk21XHg_ViOlZ6EyUG/exec'
-	const form = document.forms['sub-com']
-
-	form.addEventListener('submit', e => {
-	  e.preventDefault()
-	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-		.then(response => console.log('Success!', response))
-		.catch(error => console.error('Error!', error.message))
-
-		document.getElementById("orderForm").reset();   
-		cicr(); 
-	});
-	
-  /*$.ajax({
-    url:"https://api.apispreadsheets.com/data/oHTzQTV5VcW1OuUc/",
+  $.ajax({
+    url:"https://api.apispreadsheets.com/data/B5LNu9ZBnFF1j0r6/",
     type:"post",
     data:$("#myForm").serializeArray(),
     success: function(){
@@ -108,7 +94,7 @@ function SubForm (){
 		  $(messagetag).fadeOut();
 	  }
     }
-  });*/
+  });
 }
 
 var linksToDisp = document.getElementById("hiid");

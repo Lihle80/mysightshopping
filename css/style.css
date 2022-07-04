@@ -435,3 +435,9 @@ h1,h2,h3,h4,h5{
     max-width: 1500px;
   }
 }
+
+/*product*/
+.chover:hover{
+	box-shadow:0px 0px 15px #888888;
+	transition: ease-in 0.3s;
+}
