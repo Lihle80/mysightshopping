@@ -53,15 +53,15 @@ function init(){
 
             
             try{
-				prodCardinner.innerHTML = `
+				prodCardinner.innerHTML += `
 				<div class="col-sm-4">
-					<div class="card chover" style="width: 30rem;">
+					<div class="card chover" style="width: 40rem;">
 						<div class="card-header">
 						<h4>${productName}</h4>
 						</div>
-						<img src='${imgUrl}' class="card-img-top" alt="productName">
+						<img src="${imgUrl}" class="card-img-top" alt="${productName} img">
 						<div class="card-body">
-							<h4 class="card-title">${prdPrice}</h4>
+							<h4 class="card-title">R ${prdPrice}.00</h4>
 							<p class="card-text"></p>
 							<button type="button" id="prd_Code" class="btn btn-warning" data-toggle="modal" data-target="#productCenter">View Product</button>
 						</div>
