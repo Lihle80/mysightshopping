@@ -2,7 +2,7 @@
 var prodCardinner = document.getElementById("prdCards");
 var modinnerBody = document.getElementById("modinnerBody");
 var modinnerTitle = document.getElementById("modinnerTitle");
-var modinnerFoot = document.getElementsById("modinnerFoot");
+var modinnerFoot = document.getElementById("modinnerFoot");
 
 //work/functions
 //https://docs.google.com/spreadsheets/d/1H6bKg6hzG-zO64cAZFl_ChUD5nIhJzLQAX8Fc3Z7qcs/edit?usp=sharing
@@ -67,7 +67,6 @@ function init(){
 						</div>
 					</div>
 				</div>`;
-
             }
             catch{
               
