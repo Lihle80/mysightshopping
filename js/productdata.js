@@ -57,13 +57,13 @@ function init(){
             try{
     				prodCardinner.innerHTML += `
     				<div class="col-sm">
-    					<div class="card chover" style="width: 35rem;">
+    					<div class="card chover" style="width: 35rem; height: 55rem;">
     						<div class="card-header bg-dark text-light">
     						<h4>${productName}</h4>
     						</div>
 
                 <div class="card-body">
-    						<img src="${imgUrl}" class="card-img-top" alt="${productName} img">
+    						<img src="${imgUrl}" class="card-img-top" alt="${productName} img" height="100%">
     		        </div>
 
                 <div class="card-footer">
