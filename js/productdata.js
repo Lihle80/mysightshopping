@@ -33,12 +33,12 @@ function init(){
 
         let nw = [ ];
 		
-        for (let i = 1; i < prodArr.length; i++) {
+        for (let i = 0; i < prodArr.length; i++) {
       
           var prd_Code = prodArr[i].c[0].v;
           var productName =	prodArr[i].c[1].v;
           var prdDescription =	prodArr[i].c[2].v;
-          var prdPrice =	prodArr[i].c[3].v;
+          var prdPrice = prodArr[i].c[3].v;
           var imgUrl = prodArr[i].c[4].v;
 
 
@@ -50,28 +50,34 @@ function init(){
                 "Price": prdPrice,	
                 "img_url": imgUrl
             });
-	  console.log(nw);
-            
+          
+            //google drive links
+            //https://drive.google.com/uc?export=view&id=0B6wwyazyzml-OGQ3VUo0Z2thdmc
+
             try{
-				prodCardinner.innerHTML += `
-				<div class="col-sm-4">
-					<div class="card chover" style="width: 35rem;">
-						<div class="card-header">
-						<h4>${productName}</h4>
-						</div>
-						<img src='${imgUrl}' class="card-img-top" alt="${productName} img">
-						<div class="card-body">
-							<h4 class="card-title">R ${prdPrice}.00</h4>
-							<p class="card-text"></p>
-							<button type="button" id="prd_Code" class="btn btn-warning" data-toggle="modal" data-target="#productCenter">View Product</button>
-						</div>
-					</div>
-				</div>`;
+    				prodCardinner.innerHTML += `
+    				<div class="col-sm">
+    					<div class="card chover" style="width: 35rem;">
+    						<div class="card-header bg-dark text-light">
+    						<h4>${productName}</h4>
+    						</div>
+
+                <div class="card-body">
+    						<img src="${imgUrl}" class="card-img-top" alt="${productName} img">
+    		        </div>
+
+                <div class="card-footer">
+    							<h4 class="card-title">R ${prdPrice}.00</h4>
+    							<p class="card-text"></p>
+    							<button type="button" id="prd_Code" class="btn btn-warning" data-toggle="modal" data-target="#productCenter">View Product</button>
+    						</div>
+    					</div>
+    				</div>`;
             }
             catch{
               
             }
-			
         }
+        console.log(nw);
     })        
 }
