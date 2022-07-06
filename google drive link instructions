@@ -1,0 +1,10 @@
+
+//this is the base link for fetching a photo from google drive using its id.
+https://drive.google.com/uc?export=view&id=
+
+// follow the steps below:
+step 1: get link from google drive photo
+step 2: copy only the id of the image or video from the link retrieved from googledrive "getlink" option.
+step 3: paste the id at the end of the link above after the "id=" part of the link and this should resolve 
+        the correct URL to retrieve the correct image from the drive.
+
