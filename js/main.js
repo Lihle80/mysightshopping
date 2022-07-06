@@ -110,3 +110,44 @@ function displaylinks(){
 	}
 
 }
+
+//https://script.google.com/macros/s/AKfycbxIMpxXvRcrvG1epMoGtzi2fZSsHiAZjtYPDbJeYuO2N6nj7H9KaP83Pkjap__yHzy4Ow/exec
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxIMpxXvRcrvG1epMoGtzi2fZSsHiAZjtYPDbJeYuO2N6nj7H9KaP83Pkjap__yHzy4Ow/exec';
+var formalert = document.getElementById("alertmessage");
+
+function subfromnews(){
+
+ var loadciclenw = document.getElementById("loaderspnw");
+
+ loadciclenw.style.display = "block";
+
+
+	$.ajax({
+				url:"https://api.apispreadsheets.com/data/fyvd5lqErI1N3eBR/",
+				type:"post",
+				data:$("#nwsForm").serializeArray(),
+				success: function(){
+
+					$(loadciclenw).fadeOut();
+					formalert.innerHTML = "You have successfully subscribed to our newsletter.";
+
+					 const msgalert = setTimeout(msgalerttime, 5000)
+				   function msgalerttime(){
+					  $(formalert).fadeOut();
+					  
+				   }
+
+				},
+				error: function(){
+					formalert.style.color = "red";
+					formalert.innerHTML = "Your email has not been submitted!";
+
+					 const msgalert = setTimeout(msgalerttime, 5000)
+					 function msgalerttime(){
+						  $(formalert).fadeOut();
+					 }
+
+				}
+			});
+		
+} 

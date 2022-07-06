@@ -12,6 +12,7 @@
  
     <!--css Styles-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/conveedev.css">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -64,7 +65,7 @@
 		<div id="shopnow">
 		  <a href="shop.html"><img src="img/shop.png" id="imgshop" alt="shop" width="30%"></a>
 		  <center>
-			<button type="button" id="starshoppingbtn">Start Shopping <i class="fa fa-shopping-basket"></i></button>
+			<a href="shop.html"><button type="button" class="conveebtn mainbtn">Start Shopping <i class="fa fa-shopping-basket"></i></button></a>
 		  </center>
 		  <br>
 		</div>
@@ -191,7 +192,7 @@
 									<button type="button" name="Submit" onclick='SubForm()' id="inputSubmit">Submit <i class="fa fa-paper-plane"></i></button>
 								  </div>
 								  <div class="col-sm-6">
-									<button type="reset" name="Submit" id="inputSubmit">Clear Form <i class="fa fa-times"></i></button>
+									<button type="reset" id="inputSubmit">Clear Form <i class="fa fa-times"></i></button>
 								  </div>
 								</div>
 							</div>
@@ -211,6 +212,30 @@
 
 </div>
 
+	<section class="bg-light">
+	 <br>
+    <!--Newsletter form-->
+    <center>
+    	<h3 style="font-family: 'Times New Roman', Times, serif;">Subscribe to our Newsletter</h3>
+    </center>
+    
+    <center>
+    	<div style="width: 80%;">
+        <form name="sub-newsletter" id="nwsForm">
+        	<input type="email" class="form-control" name="Email" id="newsletter-email" placeholder="Enter your email...">
+        	<br>
+        	<h4 id="alertmessage">
+        		<span id="loaderspnw" >
+        			<center><img src="img\squareloader.gif" width="10%" alt="imgload"></center>
+        		</span>
+        	</h4>
+        	<input type="button" onclick="subfromnews()" class="conveebtn secondarybtn" value="Subscribe">
+        </form>
+      </div>
+    </center>
+    <br>
+  </section>
+
 <!-----------------------------------------------footer section-------------------------------------------------------->
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
@@ -223,41 +248,45 @@
   
         <!-- Instagram -->
         <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/mysightshopping" role="button"><i class="fa fa-instagram" id="icone"></i> mysightshopping</a>
+
+        <!-- website -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com/mysightshopping" role="button"><i class="fa fa-globe" id="icone"></i> mysight.co.za</a>
         
+
       </section>
       <!-- Section: Social media -->
-  
-    <center>
-      <!-- Section links  -->
-      <div class="container-lg">
-        <div class="row" id="foot-links">
-          <div class="col-sm-4">
-            <dl style="list-style: none;" class="footer-list">
-              <li><a href="#!">FAQ</a></li>
-              <li><a href="#!">Terms & Conditions</a></li>
-              <li><a href="#!">Privacy policy</a></li>
-              <li><a href="#!">Delivery policy</a></li>
-            </dl>
-          </div>
-          <div class="col-sm-4">
-            <dl style="list-style: none;" class="footer-list">
-              <li><a href="#!">FAQ</a></li>
-              <li><a href="#!">Terms & Conditions</a></li>
-              <li><a href="#!">Privacy policy</a></li>
-              <li><a href="#!">Delivery policy</a></li>
-            </dl>
-          </div>
-          <div class="col-sm-4">
-            <dl style="list-style: none;" class="footer-list">
-              <li><a href="#!">FAQ</a></li>
-              <li><a href="#!">Terms & Conditions</a></li>
-              <li><a href="#!">Privacy policy</a></li>
-              <li><a href="#!">Delivery policy</a></li>
-            </dl>
-          </div>
-        </div>
-      </div>
-    </center>
+  		<br><br>
+	    <section class="mb-4">
+	      <!-- Section links  -->
+	      <div class="container-lg">
+	        <div class="row" id="foot-links">
+	          <div class="col-sm-4">
+	            <dl style="list-style: none;" class="footer-list">
+	              <li><a href="#!">FAQ</a></li>
+	              <li><a href="#!">Terms & Conditions</a></li>
+	              <li><a href="#!">Privacy policy</a></li>
+	              <li><a href="#!">Delivery policy</a></li>
+	            </dl>
+	          </div>
+	          <div class="col-sm-4">
+	            <dl style="list-style: none;" class="footer-list">
+	              <li><a href="#!">FAQ</a></li>
+	              <li><a href="#!">Terms & Conditions</a></li>
+	              <li><a href="#!">Privacy policy</a></li>
+	              <li><a href="#!">Delivery policy</a></li>
+	            </dl>
+	          </div>
+	          <div class="col-sm-4">
+	            <dl style="list-style: none;" class="footer-list">
+	              <li><a href="#!">FAQ</a></li>
+	              <li><a href="#!">Terms & Conditions</a></li>
+	              <li><a href="#!">Privacy policy</a></li>
+	              <li><a href="#!">Delivery policy</a></li>
+	            </dl>
+	          </div>
+	        </div>
+	      </div>
+	    </section>
 <br>
 
       <!-- Section: Text -->
@@ -265,15 +294,17 @@
         <center>
           <h4>
             Thank you for the great support.
-          </h4><br>
-		  <p>Developer <a type="button" onclick="displaylinks()" class="lowerlink"><b>Mila</b><em>(Convee Developer)</em></a>
-		  <br>
-		  <div id="hiid">
-		  <a href="https://instagram.com/convee.za" class="lowerlink"><i class="fa fa-instagram"></i> Convee.co</a>
-		  &nbsp;&nbsp;
-		  <a href="https://convee.co.za" class="lowerlink"><i class="fa fa-globe"></i> convee.co.za</a>
-		  </div>
-		  </p>
+          </h4>
+          <br>
+				  <p>
+				  	Developer <a type="button" onclick="displaylinks()" class="lowerlink"><b>Mila</b><em>(Convee Developer)</em></a>
+					  <br>
+					  <div id="hiid">
+						  <a href="https://instagram.com/convee.za" class="lowerlink"><i class="fa fa-instagram"></i> Convee.co</a>
+						  &nbsp;&nbsp;
+						  <a href="https://convee.co.za" class="lowerlink"><i class="fa fa-globe"></i> convee.co.za</a>
+					  </div>
+				  </p>
         </center>
       </section>
       
