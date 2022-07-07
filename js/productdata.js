@@ -186,10 +186,6 @@ function populateDetailsModal(clickedId){
                 document.getElementById("frmsize").style.display = "none";
                 document.getElementById("frmcolor").style.display = "none";
               }
-              else if(productName.includes("Cap Red & Blue") == true){
-                document.getElementById("frmsize").style.display = "none";
-                document.getElementById("frmcolor").style.display = "block";
-              }
               else if(productName.includes("Beanie") == true){
                 document.getElementById("frmsize").style.display = "none";
                 document.getElementById("frmcolor").style.display = "none";
@@ -198,6 +194,15 @@ function populateDetailsModal(clickedId){
                 document.getElementById("frmsize").style.display = "block";
                 document.getElementById("frmcolor").style.display = "none";
               }
+              
+              //
+              if(productName.includes("Red") == true){
+                document.getElementById("frmsize").style.display = "none";
+                document.getElementById("frmcolor").style.display = "block";
+                console.log("im a red and blue")
+              }
+
+              //
 
               if(stockStatus == "Out of stock")
               {
