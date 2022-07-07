@@ -440,3 +440,9 @@ h1,h2,h3,h4,h5{
 #loaderspnw{
   display: none;
 }
+
+label{
+  display: inline-block;
+  width: 70px;
+  text-align: left;
+}
