@@ -107,6 +107,8 @@ function populateDetailsModal(clickedId){
   //retrive the correct id for thew product
   modinnerTitle.innerHTML = "Item Code: " + clickedId;
 
+
+  
   fetch(url)
     .then(res => res.text())
     .then(rep => {
@@ -126,7 +128,8 @@ function populateDetailsModal(clickedId){
           var productName = prodArr[i].c[1].v;
           var prdDescription = prodArr[i].c[2].v;
           var prdPrice = prodArr[i].c[3].v;
-          var imgUrl = prodArr[i].c[4].v;
+          var stockStatus = prodArr[i].c[4].v;
+          var imgUrl = prodArr[i].c[5].v;
 
 
           //contruction a proper structured array of the data
@@ -134,68 +137,81 @@ function populateDetailsModal(clickedId){
                 "Prd_Code": prd_Code,
                 "Name": productName,  
                 "Description": prdDescription,  
-                "Price": prdPrice,  
+                "Price": prdPrice,
+                "StockStatus": stockStatus,  
                 "img_url": imgUrl
             });
 
-          if(clickedId == prd_Code){
-            prodright.innerHTML = `<h1>All the images and related gallery for this product will go here.</h1>`;
+      
+            if(clickedId == prd_Code){
+              prodright.innerHTML = `<h1>All the images and related gallery for this product will go here.</h1>`;
 
-            prodleft.innerHTML = `
-            <h4>${productName}</h4>
-            <hr>
-            <h5>Description</h5>
-            <p>${prdDescription}</p>
-            <hr>
-            <div id="frmsize">
-              <h5><b>Select size</b></h5>
-              <form class="size">
-                <label>Small</label>
-                <input type="radio" name="sizeRad"><br>
-                <label>Medium</label>
-                <input type="radio" name="sizeRad"><br>
-                <label>Large</label>
-                <input type="radio" name="sizeRad"><br>
-                <label>XLarge</label>
-                <input type="radio" name="sizeRad"><br>
-                <label>2XLarge</label>
-                <input type="radio" name="sizeRad">
-              <from>
+              prodleft.innerHTML = `
+              <h4>${productName}</h4>
               <hr>
-            </div>
-
-            <div id="frmcolor">
-              <h5><b>Select a color</b></h5>
-              <form class="colorfrm">
-                <label>Red</label>
-                <input type="radio" name="capColor"><br>
-                <label>Blue</label>
-                <input type="radio" name="capColor"><br>
-              <from>
+              <h5>Description</h5>
+              <p>${prdDescription}</p>
               <hr>
-             </div>
-            <h4>R ${prdPrice}.00</h4>`;
+              <div id="frmsize">
+                <h5><b>Select size</b></h5>
+                <form class="size">
+                  <label>Small</label>
+                  <input type="radio" name="sizeRad"><br>
+                  <label>Medium</label>
+                  <input type="radio" name="sizeRad"><br>
+                  <label>Large</label>
+                  <input type="radio" name="sizeRad"><br>
+                  <label>XLarge</label>
+                  <input type="radio" name="sizeRad"><br>
+                  <label>2XLarge</label>
+                  <input type="radio" name="sizeRad">
+                <from>
+                <hr>
+              </div>
 
-            if(productName.includes("Cap") == true){
-              document.getElementById("frmsize").style.display = "none";
-              document.getElementById("frmcolor").style.display = "none";
-            }
-            else if(productName.includes("Cap Red & Blue") == true){
-              document.getElementById("frmsize").style.display = "none";
-              document.getElementById("frmcolor").style.display = "block";
-            }
-            else if(productName.includes("Beanie") == true){
-              document.getElementById("frmsize").style.display = "none";
-              document.getElementById("frmcolor").style.display = "none";
-            }
-            else{
-              document.getElementById("frmsize").style.display = "block";
-              document.getElementById("frmcolor").style.display = "none";
-            }
+              <div id="frmcolor">
+                <h5><b>Select a color</b></h5>
+                <form class="colorfrm">
+                  <label>Red</label>
+                  <input type="radio" name="capColor"><br>
+                  <label>Blue</label>
+                  <input type="radio" name="capColor"><br>
+                <from>
+                <hr>
+               </div>
+              <h4>R ${prdPrice}.00</h4>
+              <p style="color: red" id="otfstk">This product is out of stcok!</p>`;
 
-          }
+              if(productName.includes("Cap") == true){
+                document.getElementById("frmsize").style.display = "none";
+                document.getElementById("frmcolor").style.display = "none";
+              }
+              else if(productName.includes("Cap Red & Blue") == true){
+                document.getElementById("frmsize").style.display = "none";
+                document.getElementById("frmcolor").style.display = "block";
+              }
+              else if(productName.includes("Beanie") == true){
+                document.getElementById("frmsize").style.display = "none";
+                document.getElementById("frmcolor").style.display = "none";
+              }
+              else{
+                document.getElementById("frmsize").style.display = "block";
+                document.getElementById("frmcolor").style.display = "none";
+              }
 
-        }
+              if(stockStatus == "Out of stock")
+              {
+                document.getElementById("add-cBtn").style.display = "none";
+                document.getElementById("otfstk").style.display = "block"
+              }
+              else{
+                document.getElementById("add-cBtn").style.display = "block";
+                document.getElementById("otfstk").style.display = "none"
+              }
+
+            }//end of if Statement
+
+        }//end of forloop
 
     });        
 }

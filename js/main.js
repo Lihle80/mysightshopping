@@ -130,17 +130,18 @@ function subfromnews(){
 
 					$(loadciclenw).fadeOut();
 					formalert.innerHTML = "You have successfully subscribed to our newsletter.";
-
+					document.getElementById("nwsForm").reset();
+					
 					 const msgalert = setTimeout(msgalerttime, 5000)
 				   function msgalerttime(){
 					  $(formalert).fadeOut();
-					  
+
 				   }
 
 				},
 				error: function(){
 					formalert.style.color = "red";
-					formalert.innerHTML = "Your email has not been submitted!";
+					formalert.innerHTML = "Your email has not been submitted, please try again!";
 
 					 const msgalert = setTimeout(msgalerttime, 5000)
 					 function msgalerttime(){
