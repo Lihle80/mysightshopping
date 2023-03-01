@@ -7,7 +7,7 @@ on:
 env:
   ECR_REGISTRY: public.ecr.aws
   IMAGE_NAME: mysightapp
-  AWS-REGION: us-east-1
+  AWS_REGION: us-east-1
 
 jobs:
   build-and-push:
