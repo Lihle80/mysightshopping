@@ -1,0 +1,45 @@
+name: Build and Push Docker image to public ECR
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+env:
+  ECR_REGISTRY: public.ecr.aws
+  IMAGE_NAME: mysightapp
+  AWS-REGION: us-east-1
+
+jobs:
+
+  build-and-push:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v3
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+        
+    - name: Login to ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+      with:
+        registry: ${{ env.ECR_REGISTRY }}
+        
+    - name: Build Docker image
+      run: |
+        docker build . --file dockerfile -t mysightapp:$(date +%Y-%m-%d)
+        docker tag mysightapp:$(date +%Y-%m-%d) $ECR_REGISTRY/j5n7n1z2/mysightapp:latest
+    
+    - name: Push Docker image
+      run: |
+        docker push $ECR_REGISTRY/j5n7n1z2/mysightapp:$(date +%Y-%m-%d)
+        docker push $ECR_REGISTRY/j5n7n1z2/mysightapp:latest
