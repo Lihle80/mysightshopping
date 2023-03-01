@@ -34,7 +34,7 @@ jobs:
         
     - name: Build Docker image
       run: |
-        docker build . --file Dockerfile -t mysightapp:$(date +%Y-%m-%d)
+        docker build -t mysightapp:$(date +%Y-%m-%d) .
         docker tag mysightapp:$(date +%Y-%m-%d) $ECR_REGISTRY/j5n7n1z2/mysightapp:latest
     
     - name: Push Docker image
