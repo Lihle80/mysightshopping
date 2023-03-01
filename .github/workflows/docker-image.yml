@@ -2,8 +2,7 @@ name: Build and Push Docker image to public ECR
 
 on:
   push:
-    branches:
-      - main    
+    branches: [ main ]   
 
 jobs:
   build-and-push:
@@ -31,6 +30,6 @@ jobs:
        REPOSITORY_NAME: mysightapp
        IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t $REPOSITORY_NAME/$IMAGE_TAG .
-        docker tag $REPOSITORY_NAME/$IMAGE_TAG $ECR_REGISTRY/$REPOSITORY_NAME:$IMAGE_TAG
+        docker build -t $REPOSITORY_NAME .
+        docker tag $REPOSITORY_NAME $ECR_REGISTRY/$REPOSITORY_NAME:$IMAGE_TAG
         docker push $ECR_REGISTRY/$REPOSITORY_NAME:$IMAGE_TAG
