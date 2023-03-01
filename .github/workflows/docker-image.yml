@@ -2,19 +2,15 @@ name: Build and Push Docker image to public ECR
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-    
+    branches:
+      - main    
 env:
   ECR_REGISTRY: public.ecr.aws
   IMAGE_NAME: mysightapp
   AWS-REGION: us-east-1
 
 jobs:
-
   build-and-push:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +20,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
+        registry: ${{ env.ECR_REGISTRY }}
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
