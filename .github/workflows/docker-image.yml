@@ -39,5 +39,4 @@ jobs:
     
     - name: Push Docker image
       run: |
-        docker push $ECR_REGISTRY/j5n7n1z2/mysightapp:$(date +%Y-%m-%d)
         docker push $ECR_REGISTRY/j5n7n1z2/mysightapp:latest
